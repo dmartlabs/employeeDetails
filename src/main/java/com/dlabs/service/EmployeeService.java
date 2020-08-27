@@ -26,7 +26,7 @@ public interface EmployeeService {
 	 * @return employee
 	 * @throws EmployeeNotFound
 	 */
-	Employee getEmployee(String name) throws EmployeeNotFound;
+	Employee getEmployee(String empId) throws EmployeeNotFound;
 	
 	/**
 	 * @param employeeDto

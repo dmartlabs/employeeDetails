@@ -1,5 +1,7 @@
 package com.dlabs.model;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
@@ -12,12 +14,15 @@ import lombok.Data;
 @Data
 public class Address {
 
+	@NotNull(message = "house number of address cannot be blank")
 	@JsonProperty("houseNum")
 	private String houseNum;
 	
+	@NotNull(message = "city of address cannot be blank")
 	@JsonProperty("city")
 	private String City;
 	
+	@NotNull(message = "state of address cannot be blank")
 	@JsonProperty("state")
 	private String state;
 	
