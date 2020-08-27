@@ -10,11 +10,9 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.dlabs.dto.EmployeeDto;
 import com.dlabs.exception.EmployeeNotFound;
@@ -33,7 +31,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 @SpringBootTest
 @Slf4j
-@RunWith(SpringRunner.class)
 class EmployeeServiceImplTest {
 
 	@InjectMocks
