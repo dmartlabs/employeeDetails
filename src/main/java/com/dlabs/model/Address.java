@@ -20,7 +20,7 @@ public class Address {
 	
 	@NotNull(message = "city of address cannot be blank")
 	@JsonProperty("city")
-	private String City;
+	private String city;
 	
 	@NotNull(message = "state of address cannot be blank")
 	@JsonProperty("state")

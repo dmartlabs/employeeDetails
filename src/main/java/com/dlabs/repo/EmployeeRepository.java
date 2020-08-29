@@ -8,9 +8,9 @@ import com.dlabs.model.Employee;
 /**
  * @author Kamlesh Kumar
  * Date 26-August-2020
- * This is a EmployeeRepository class, Use to save employee details in db
+ * This is a EmployeeRepository Interface
  */
 @Repository
-public interface EmployeeRepository extends MongoRepository<Employee, String> {
+public interface EmployeeRepository extends MongoRepository<Employee, String>,EmployeeCustomRepo {
 
 }

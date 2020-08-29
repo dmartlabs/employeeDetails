@@ -1,10 +1,13 @@
 package com.dlabs.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.dlabs.dto.EmployeeDto;
 import com.dlabs.exception.EmployeeNotFound;
 import com.dlabs.model.Employee;
+import com.dlabs.model.Name;
 
 /**
  * @author Kamlesh Kumar
@@ -41,4 +44,16 @@ public interface EmployeeService {
 	 * @throws EmployeeNotFound
 	 */
 	Employee deleteEmployee(String empId) throws EmployeeNotFound;
+	
+	/**
+	 * @param name and city
+	 * @return List<Employee>
+	 */
+	List<Employee> getEmployeeByNameAndCity(Name name,String city);
+
+	/**
+	 * @param name
+	 * @return List<Employee>
+	 */
+	List<Employee> getEmployeeByName(Name name);
 }

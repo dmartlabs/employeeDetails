@@ -1,5 +1,6 @@
 package com.dlabs.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.dlabs.dto.EmployeeDto;
 import com.dlabs.exception.EmployeeNotFound;
 import com.dlabs.model.Employee;
+import com.dlabs.model.Name;
 import com.dlabs.repo.EmployeeRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -113,5 +115,41 @@ public class EmployeeServiceImpl implements EmployeeService {
 		 
 		employeeRepository.deleteById(empId);
 		return emp.get();
+	}
+
+	/**
+	 * @param name,city
+	 * @return List<Employee>
+	 * This is service method for getEmployeeByNameAndCity
+	 */
+	
+	@Override
+	public List<Employee> getEmployeeByNameAndCity(Name name,String city) {
+		log.info("Inside getEmployeeByNameAndCity()");
+		log.debug("Parameters name is "+ name +"and city is : "+city);
+		List<Employee> employeeList=employeeRepository.findByNameAndCity(name, city);
+		
+		log.debug("Get List of Employee Details with: "+name +" and "+ city);
+		log.trace("employeeList: "+employeeList);
+		 
+		return employeeList;
+	}
+	
+	/**
+	* @param name,city
+	 * @return List<Employee>
+	 * This is service method for getEmployeeByName
+	 */
+	
+	@Override
+	public List<Employee> getEmployeeByName(Name name) {
+		
+		log.info("Inside getEmployeeByName()");
+		log.debug("Parameters name is "+ name);
+		List<Employee> employeeList=employeeRepository.findByName(name);
+		
+		log.debug("Get List of Employee Details with: "+name);
+		log.trace("employeeList: "+employeeList);
+		return employeeList;
 	}
 }
