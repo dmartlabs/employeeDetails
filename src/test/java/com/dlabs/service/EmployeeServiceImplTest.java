@@ -5,6 +5,8 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -42,6 +44,7 @@ class EmployeeServiceImplTest {
 	private Employee setupEmployee = new Employee();
 	private Name setupName = new Name();
 	private Address setupAddress = new Address();
+	private List<Employee> setupEmployeeList=new ArrayList<>();
 
 	/**
 	 * Use to setup employeeDetails in Employee Model
@@ -60,6 +63,7 @@ class EmployeeServiceImplTest {
 		setupEmployee.setName(setupName);
 		setupEmployee.setAddress(setupAddress);
 		setupEmployee.setEmpId("9876543210");
+		setupEmployeeList.add(setupEmployee);
 	}
 	
 	/**
@@ -185,4 +189,38 @@ class EmployeeServiceImplTest {
 		
 		log.info("testDeleteEmployeeException completed");
 	}
+	
+	/**
+	 * Use to test employeeService.getEmployeeByNameAndCity()
+	 */
+	
+	@Test
+	@DisplayName("getEmployeeByNameAndCity")
+	public void testgetEmployeeByNameAndCity(){
+		log.info("inside getEmployeeByNameAndCity");
+		log.info("Use to test employeeService.getEmployeeByNameAndCity()");
+		
+		when(employeeRepository.findByNameAndCity(setupName, setupAddress.getCity())).thenReturn(setupEmployeeList);
+		assertEquals(setupEmployeeList, employeeService.getEmployeeByNameAndCity(setupName, setupAddress.getCity()));
+		
+		log.info("getEmployeeByNameAndCity completed");
+	}
+	
+	
+	/**
+	 * Use to test employeeService.getEmployeeByName()
+	 */
+	
+	@Test
+	@DisplayName("getEmployeeByName")
+	public void testEmployeeByName(){
+		log.info("inside getEmployeeByName");
+		log.info("Use to test employeeService.getEmployeeByName()");
+		
+		when(employeeRepository.findByName(setupName)).thenReturn(setupEmployeeList);
+		assertEquals(setupEmployeeList, employeeService.getEmployeeByName(setupName));
+		
+		log.info("getEmployeeByName completed");
+	}
+	
 }
