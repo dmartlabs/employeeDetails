@@ -12,9 +12,9 @@ public class JsonResponseSetup {
 	 * Use to setup EMPLOYEE_RESPONSE with Employee json
 	 */
 	
-	public static final String EMPLOYEE_RESPONSE="{   \"empId\":\"12345678\",\r\n" + 
+	public static final String EMPLOYEE_RESPONSE="{   \"empId\":\"12345675\",\r\n" + 
 			"    \"name\":{\r\n" + 
-			"        \"firstName\":\"Kamlesh\",\r\n" + 
+			"        \"firstName\":\"Rahul\",\r\n" + 
 			"        \"lastName\":\"Kumar\"\r\n" + 
 			"    },\r\n" + 
 			"    \"address\":{\r\n" + 
@@ -30,12 +30,20 @@ public class JsonResponseSetup {
 	 * Use to setup UPDATE_EMPLOYEE_RESPONSE with EmployeeDto json
 	 */
 	
-	public static final String UPDATE_EMPLOYEE_RESPONSE	="{ \"empId\":\"12345678\",\r\n" + 
+	public static final String UPDATE_EMPLOYEE_RESPONSE	="{ \"empId\":\"12345675\",\r\n" + 
 			"  \"address\":{\r\n" + 
 			"        \"houseNum\":\"19 B\",\r\n" + 
-			"         \"city\":\"Patna\",\r\n" + 
+			"         \"city\":\"Danapur\",\r\n" + 
 			"         \"state\":\"Bihar\"\r\n" + 
 			"    },\r\n" + 
 			"    \"phone\":\"8980896105\"\r\n" + 
 			"}";
+	
+	/**
+	 * Use to setup EMPLOYEE_NAME with Name json
+	 */
+	public static final String EMPLOYEE_NAME="{\r\n" + 
+			"            \"firstName\": \"Rahul\",\r\n" + 
+			"            \"lastName\": \"Kumar\"\r\n" + 
+			"        }";
 }
